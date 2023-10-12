@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model IQueryable<Product>
+
+<div class="text-center">
+    <h1 class="display-4">Hello world</h1>
+    <ul> 
+        @foreach (var item in Model ?? Enumerable.Empty<Product>())
+    {
+        <li>@item.Name</li>
+        <li>@item.Description</li>
+        <li>@item.Category</li>
+        <li>@item.Price</li>
+    }
+    </ul>
+    <div>
+        Phan trang
+        <a asp-controller="Home" asp-action="Pagnition" asp-route-id="1">1</a>
+        <a asp-controller="Home" asp-action="Pagnition" asp-route-id="2">2</a>
+        <a asp-controller="Home" asp-action="Pagnition" asp-route-id="3">3</a>
+    </div>
+</div>
